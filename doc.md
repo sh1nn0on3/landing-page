@@ -30,4 +30,5 @@ app.scss : chỉnh dòng , lể setup ảnh  ,vv
     
     + pages 
         + Home.jsx
+            + dùng swiper 
              

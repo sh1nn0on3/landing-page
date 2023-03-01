@@ -8,7 +8,7 @@ SwiperCore.use([Mousewheel, Pagination, EffectFade]);
 
 const swiperOptions = {
   direction: "vertical",
-  slidePerView: 1,
+  slideperview: 1,
   spaceBetween: 0,
   mousewheel: true,
   pagination: true,
