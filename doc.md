@@ -27,4 +27,7 @@ app.scss : chỉnh dòng , lể setup ảnh  ,vv
             
         + header.scss 
             + import scss
+    
+    + pages 
+        + Home.jsx
              
