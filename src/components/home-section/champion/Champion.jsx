@@ -1,7 +1,7 @@
 import "./champion.scss";
 
 import HomeSection from "../HomeSection";
-import { ChampionCard } from "./championCard/ChampionCard";
+import ChampionCard from "./championCard/ChampionCard";
 
 import { bg2 } from "../../../assets/images";
 import { championsData } from "../../../assets/dummy";

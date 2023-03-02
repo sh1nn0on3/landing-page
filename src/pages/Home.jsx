@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination, EffectFade } from "swiper";
 
 import Welcome from "../components/home-section/welcome/Welcome";
+import Champion from "../components/home-section/champion/Champion";
 
 SwiperCore.use([Mousewheel, Pagination, EffectFade]);
 const swiperOptions = {
@@ -20,7 +21,12 @@ const Home = () => {
   return (
     <>
       <Swiper {...swiperOptions}>
-        <SwiperSlide>slide 2</SwiperSlide>
+        <SwiperSlide>
+          {({ isActive }) => <Welcome isActive={isActive} />}
+        </SwiperSlide>
+        <SwiperSlide>
+          {({ isActive }) => <Champion isActive={isActive} />}
+        </SwiperSlide>
       </Swiper>
     </>
   );
