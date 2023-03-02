@@ -13,7 +13,7 @@ export const SectionContent = (props) => {
       }
     : {};
   return (
-    <div className={`section__content ${props.classnName}`} style={bgImage}>
+    <div className={`section__content ${props.className}`} style={bgImage}>
       {props.children}
     </div>
   );

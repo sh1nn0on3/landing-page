@@ -27,9 +27,9 @@
     }
 
     &__img {
-      @include flex(flex-start, flex-start);
-
-      &__slide {
+      @include flex(flex-end, flex-start);
+      
+       &__slide {
         height: 915px;
         width: 915px;
         overflow: hidden;
