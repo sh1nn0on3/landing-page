@@ -17,7 +17,7 @@
     &__content {
       padding-left: 15rem;
 
-      .desciption {
+      .description {
         font-style: 1rem;
       }
 
@@ -25,18 +25,18 @@
         margin-left: 1rem;
       }
     }
+  }
 
-    &__img {
-      @include flex(flex-end, flex-start);
-      
-       &__slide {
-        height: 915px;
-        width: 915px;
-        overflow: hidden;
+  &__img {
+    @include flex(flex-end, flex-start);
 
-        canvas {
-          display: block;
-        }
+    &__slide {
+      height: 915px;
+      width: 915px;
+      overflow: hidden;
+
+      canvas {
+        display: block;
       }
     }
   }

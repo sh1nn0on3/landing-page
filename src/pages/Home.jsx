@@ -20,9 +20,6 @@ const Home = () => {
   return (
     <>
       <Swiper {...swiperOptions}>
-        <SwiperSlide>
-          {({ isActive }) => <Welcome isActive={isActive} />}
-        </SwiperSlide>
         <SwiperSlide>slide 2</SwiperSlide>
       </Swiper>
     </>
