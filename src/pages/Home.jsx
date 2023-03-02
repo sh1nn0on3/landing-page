@@ -1,35 +1,65 @@
-import React from "react";
+import {
+  Swiper,
+  SwiperSlide
+} from 'swiper/react'
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Mousewheel, Pagination, EffectFade } from "swiper";
+import SwiperCore, {
+  EffectFade,
+  Mousewheel,
+  Pagination
+} from 'swiper'
 
-import Welcome from "../components/home-section/welcome/Welcome";
-import Champion from "../components/home-section/champion/Champion";
+import {
+  Welcome,
+  Champion,
+  ChampionDetail,
+  Trailer,
+  Credit
+} from '../components'
 
-SwiperCore.use([Mousewheel, Pagination, EffectFade]);
+import { championsData } from '../assets/dummy'
+
+SwiperCore.use([Mousewheel, Pagination, EffectFade])
+
 const swiperOptions = {
-  direction: "vertical",
-  slideperview: 1,
+  direction: 'vertical',
+  slidesPerView: 1,
   spaceBetween: 0,
   mousewheel: true,
   pagination: true,
-  effect: "fade",
-  speed: 1000,
-};
+  effect: 'fade',
+  speed: 1000
+}
 
 const Home = () => {
   return (
-    <>
-      <Swiper {...swiperOptions}>
-        <SwiperSlide>
-          {({ isActive }) => <Welcome isActive={isActive} />}
-        </SwiperSlide>
-        <SwiperSlide>
-          {({ isActive }) => <Champion isActive={isActive} />}
-        </SwiperSlide>
-      </Swiper>
-    </>
-  );
-};
+      <>
+          <Swiper {...swiperOptions}>
+              <SwiperSlide>
+                  {({ isActive }) => <Welcome isActive={isActive}/>}
+              </SwiperSlide>
+              <SwiperSlide>
+                  {({ isActive }) => <Champion isActive={isActive}/>}
+              </SwiperSlide>
+              <SwiperSlide>
+                  {({ isActive }) => <Trailer isActive={isActive}/>}
+              </SwiperSlide>
+              <SwiperSlide>
+                  {({ isActive }) => <Credit isActive={isActive}/>}
+              </SwiperSlide>
+          </Swiper>
+          {
+              championsData.map((item, index) => <ChampionDetail
+                  key={index}
+                  item={item}
+                  id={index}
+              />)
+          }
+          <div className="scroll">
+              <span>Scroll to see effect</span>
+          </div>
+      </>
+  )
+}
 
-export default Home;
+export default Home
