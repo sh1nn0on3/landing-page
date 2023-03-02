@@ -2,9 +2,17 @@ import React from "react";
 import "./welcome.scss";
 
 import HomeSection from "../HomeSection";
-
-import { bg1 } from "../../../assets/images";
 import Button from "../../button/Button";
+
+import {
+  bg1,
+  champAshe,
+  champAhri,
+  champGaren,
+  distortion,
+} from "../../../assets/images";
+
+const champImgs = [champAhri, champAshe, champGaren];
 
 const Welcome = (props) => {
   return (
@@ -19,6 +27,7 @@ const Welcome = (props) => {
             <span>Welcome to</span>
             <h2 className="main-color">Summoner's Rift</h2>
           </div>
+
           <div className="description m-t-4">
             Teams up with friends and test your skills in 5v5 MOBA combat , All
             the high-skill competition you crave , designed especially for
@@ -34,7 +43,13 @@ const Welcome = (props) => {
           </div>
         </div>
       </div>
-      <div className="welcome__img relative"></div>
+      <div className="welcome__img relative">
+        <div className="welcome__img__slide">
+          {champImgs.map((item, index) => (
+            <img src={item} alt="#" key={index} />
+          ))}
+        </div>
+      </div>
     </HomeSection>
   );
 };
