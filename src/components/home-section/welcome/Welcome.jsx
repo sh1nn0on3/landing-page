@@ -4,6 +4,7 @@ import "./welcome.scss";
 import HomeSection from "../HomeSection";
 
 import { bg1 } from "../../../assets/images";
+import Button from "../../button/Button";
 
 const Welcome = (props) => {
   return (
@@ -28,8 +29,8 @@ const Welcome = (props) => {
             you to join then .
           </div>
           <div className="btns m-t-4 ">
-            <button className="btn-main">PLAY NOW</button>
-            <button className="btn-second">GET STARTED</button>
+            <Button className="btn-main">PLAY NOW</Button>
+            <Button className="btn-second">GET STARTED</Button>
           </div>
         </div>
       </div>
