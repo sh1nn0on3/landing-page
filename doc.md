@@ -32,3 +32,4 @@ app.scss : chỉnh dòng , lể setup ảnh  ,vv
         + Home.jsx
             + dùng swiper 
              
+link : https://landing-page-three-sigma.vercel.app/
