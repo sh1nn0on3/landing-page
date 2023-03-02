@@ -1,6 +1,6 @@
 @use "./scss/" as *;
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
 
 * {
   padding: 0;
@@ -12,13 +12,14 @@
 
 html,
 body {
-  font-style: 100%;
+  font-size: 100%;
   position: relative;
+  height: 100%;
 }
 
 body {
   font-family: $font-family;
-  font-style: 1rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   background-color: $black;
@@ -33,6 +34,11 @@ li {
 
 a {
   color: unset;
+  text-decoration: none;
+}
+
+iframe {
+  border: 0;
 }
 
 #root,
@@ -41,11 +47,8 @@ a {
 }
 
 .bg-image {
-  // trung tâm
   background-position: center;
-  // không lặp
   background-repeat: no-repeat;
-  // lấy trung tâm mà k bị vỡ
   background-size: cover;
 }
 
@@ -74,16 +77,16 @@ a {
 .title {
   font-weight: 700;
   span {
-    font-style: 3rem;
+    font-size: 3rem;
   }
   h2 {
-    font-style: 5rem;
+    font-size: 5rem;
     line-height: 5rem;
   }
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1670px;
   margin: auto;
 }
 
@@ -98,5 +101,55 @@ a {
 .swiper,
 .swiper-slide {
   height: 100%;
-  @include flex(center, center);
+}
+
+.swiper-pagination-bullet {
+  $size: 20px;
+  width: $size;
+  height: $size;
+  border-radius: unset;
+  margin: 10px;
+  background-color: transparent;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: $second-color;
+  }
+
+  &-active {
+    background-color: transparent;
+
+    &::before {
+      background-color: $main-color;
+    }
+  }
+}
+
+.scroll {
+  position: fixed;
+  bottom: 1rem;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 3s ease infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
 }
